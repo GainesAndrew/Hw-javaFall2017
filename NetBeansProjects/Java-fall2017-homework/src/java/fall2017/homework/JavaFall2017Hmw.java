@@ -12,7 +12,7 @@ package java.fall2017.homework;
  * 
  * 
  */
-public class JavaFall2017Homework {
+public class JavaFall2017Hmw {
 
     /**
      * @param args the command line arguments
