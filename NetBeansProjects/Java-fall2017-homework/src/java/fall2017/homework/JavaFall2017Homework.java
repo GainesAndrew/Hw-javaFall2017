@@ -6,8 +6,11 @@
 package java.fall2017.homework;
 
 /**
- *
- * @author xanderjuice
+ * Programer: Andrew Gaines
+ * Program: testing push
+ * 
+ * 
+ * 
  */
 public class JavaFall2017Homework {
 
