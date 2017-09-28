@@ -1,2 +1,1 @@
-# Hw-javaFall2017
-# Branch hm2 = 
+# Branch hm2, solve kattis problem
