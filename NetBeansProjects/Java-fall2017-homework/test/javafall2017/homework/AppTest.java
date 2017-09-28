@@ -14,8 +14,9 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 /**
- *
- * @author xanderjuice
+ * Programer: Andrew Gaines
+ * Info: Testing methods
+ * 
  */
 public class AppTest {
     
@@ -102,31 +103,5 @@ public class AppTest {
     @Test
     public void testWriteOutput() {
         System.out.println("writeOutput untested");
-
     }
-
-    /**
-     * Test of main method, of class App.
-     */
-    @Test
-    public void testMain() {
-        System.out.println("main");
-        String[] args = null;
-        App.main(args);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of readInput method, of class App.
-     */
-    @Test
-    public void testReadInput_0args() {
-        System.out.println("readInput");
-        App instance = new App();
-        instance.readInput();
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-    
 }
