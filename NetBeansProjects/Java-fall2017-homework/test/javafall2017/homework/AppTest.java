@@ -1,11 +1,11 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package javafall2017.homework;
 
-import java.util.Scanner;
+// Programer: Andrew Gaines
+
+import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.Set;
+import java.util.TreeSet;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -13,11 +13,6 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
-/**
- * Programer: Andrew Gaines
- * Info: Testing methods
- * 
- */
 public class AppTest {
     
     public AppTest() {
@@ -39,69 +34,65 @@ public class AppTest {
     public void tearDown() {
     }
 
+    /**
+     * Test of main method, of class App.
+     */
+    @Test
+    public void testMain() throws Exception {
+        System.out.println("main untested");
+    }
 
     /**
      * Test of run method, of class App.
      */
     @Test
-    public void testRun() {
+    public void testRun() throws Exception {
         System.out.println("run untested");
+    }
+   
+    @Test
+    public void testppGames() {
+        Set<Points> ppGames = new TreeSet < Points> ();
         
+        ppGames.add(new PointsPerGame("Steph Curry",25));
+        ppGames.add(new PointsPerGame("James Harden",29));
+        ppGames.add(new PointsPerGame("Isaiah Thomas",30));
+        ppGames.add(new PointsPerGame("Klay Thompson", 22));
+        
+        for (Points n : ppGames) {
+            System.out.println("Stat: " + n.description());
+        }
     }
     
-    /**
-     * Test of readInput method, of class App.
-     */
-    @Test
-    public void testReadInput_Scanner() {
-        System.out.println("readInput");
-        Scanner in = new Scanner("3\n"+"10\n"+"9\n"+"2");
-        App app = new App();
-        app.readInput(in);
-        assertEquals(3,app.testCases);
-        assertEquals(10, app.x[0]); 
-        assertEquals(9, app.x[1]);
-        assertEquals(2, app.x[2]);
-    }
-
-    /**
-     * Test of solveProblem method, of class App.
-     */
-    @Test
-    public void testSolveProblem() {
-        System.out.println("solveProblem");
-        Scanner in = new Scanner("3\n"+"10\n"+"9\n"+"2");
-        App app = new App();
-        app.readInput(in);
-        app.solveProblem();
-        assertEquals(3, app.testCases);
-        assertEquals(true, app.numbers[0].isEven);
-        assertEquals(false, app.numbers[1].isEven);
-        assertEquals(true, app.numbers[2].isEven);
+    static class Cmp_ppGames implements Comparator < Points > {
+        @Override
+        public int compare(Points a, Points b) {
+            return a.compareTo(b);
+        }
     }
     
-    /**
-     * Test of solveProblem2 method, of class App.
-     */
     @Test
-    public void testSolveProblem2() {
-        System.out.println("solveProblem");
-        Scanner in = new Scanner("4\n"+"-10\n"+"7\n"+"3\n" +"1");
-        App app = new App();
-        app.readInput(in);
-        app.solveProblem();
-        assertEquals(4,app.testCases);
-        assertEquals(true, app.numbers[0].isEven);
-        assertEquals(false, app.numbers[1].isEven);
-        assertEquals(false, app.numbers[2].isEven); 
-        assertEquals(false, app.numbers[3].isEven);
-    }
+    public void testSortDirectives() {
+        ArrayList<Points> ppGames = new ArrayList < Points> ();
+        
+        ppGames.add(new PointsPerGame("James Harden",29));
+        ppGames.add(new PointsPerGame("Klay Thompson", 22));
+        ppGames.add(new PointsPerGame("Steph Curry",25));
+        ppGames.add(new PointsPerGame("Isaiah Thomas",30));
+        
+        ppGames.sort(new Cmp_ppGames());
 
-    /**
-     * Test of writeOutput method, of class App.
-     */
-    @Test
-    public void testWriteOutput() {
-        System.out.println("writeOutput untested");
-    }
+        ppGames.sort(new Comparator<Points>() {
+            @Override
+            public int compare(Points a, Points b) {
+                return -a.compareTo(b);
+            }  
+        });
+        ppGames.sort((a,b)->a.compareTo(b));
+        
+        assertEquals(new PointsPerGame("Klay Thompson", 22), ppGames.get(0));
+        assertEquals(new PointsPerGame("Steph Curry",25), ppGames.get(1));
+        assertEquals(new PointsPerGame("James Harden",29), ppGames.get(2));
+        assertEquals(new PointsPerGame("Isaiah Thomas" ,30), ppGames.get(3));
+    }  
 }

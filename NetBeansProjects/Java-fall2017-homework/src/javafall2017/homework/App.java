@@ -1,28 +1,31 @@
 package javafall2017.homework;
 
+import java.util.Arrays;
+
 
 /**
  * Programer: Andrew Gaines
  * 
  * About: Java fall2017
- *        HomeWork 2 
+ *        HomeWork 3 
  *        Dr. Macevoy
- *        9/28/2017
- * 
- * Program: Reads input of integers and outputs odd or even.
- *            .kattis problem = oddities
+ *        10/12/2017
  */
-public class App {
 
-    public static void main(String[] args) {
-        App app = new App();
+
+public class App {
+    String [] args;
+    App(String[] _args) {
+        args = _args;
+    }
+
+    public static void main(String[] args) throws Exception {
+        App app = new App(args);
         app.run();
     }
     
-    
-    void run()
-    {
-        
+    void run() throws Exception {
+        System.out.println("args: " + Arrays.toString(args));
     }
     
 }
