@@ -9,7 +9,7 @@ import java.sql.*;
 /**
  * Programer: Andrew Gaines
  * About: Java fall2017 HomeWork 5
- * Dr. Macevoy 10/31/2017 
+ * Dr. Macevoy 11/07/2017 
  * 
  * Program uses threads and streams
  * 
